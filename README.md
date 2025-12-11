@@ -88,8 +88,8 @@ Open PDK, Open EDA, Open RTL
 
 The main goal of OPENLANE is to produce a clean GDSII with no human intervation (no-human-in-the-loop). here the meaning of clean is that:
 
-No LVS violations
-No DRC Violations
+No LVS violations +
+No DRC Violations + 
 No timing Violations
 
 OPENLANE is tuned for skyWter130nm open PDK. it can be used to harden Macros and chips.there is two mode of operation
