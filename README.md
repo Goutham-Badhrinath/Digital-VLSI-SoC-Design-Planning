@@ -98,6 +98,7 @@ interactive : here we can run comamds and steps one by one.
 ### <h1 id="header-1_2_4">OpenLANE detailed ASIC design flow</h1>
 
 ![image](Screenshots/ASIC_FLOW.png)
+
 The design exploration utility is utilized for regression testing (CI), running OpenLANE on approximately 70 designs and comparing results to the best-known ones.
 
 **DFT (Design for Test)**  
