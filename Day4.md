@@ -356,7 +356,7 @@ run_synthesis
 
 Newly created `pre_sta.conf` for STA analysis in `openlane` directory
 
-![1](Screenshots/D45/33.png)
+![1](Screenshots/D45/61.png)
 
 Newly created `my_base.sdc` for STA analysis in `openlane/designs/picorv32a/src` directory based on the file `openlane/scripts/base.sdc`
 
