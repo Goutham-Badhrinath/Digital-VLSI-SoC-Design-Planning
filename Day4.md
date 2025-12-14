@@ -38,7 +38,7 @@ magic -T sky130A.tech sky130_inv.mag &
 
 Screenshot of tracks.info of sky130_fd_sc_hd
 
-![1](Screenshots/D45/(60).png)
+![1](Screenshots/D45/60.png)
 
 Commands for tkcon window to set grid as tracks of locali layer
 
@@ -52,11 +52,11 @@ grid 0.46um 0.34um 0.23um 0.17um
 
 Screenshot of commands run
 
-![2](Screenshots/D45/(59).png)
+![2](Screenshots/D45/59.png)
 
 Condition 1 verified
 
-![3](Screenshots/D45/(58).png)
+![3](Screenshots/D45/58.png)
 
 Condition 2 verified
 
@@ -64,7 +64,7 @@ Condition 2 verified
 Horizontal\ track\ pitch = 0.46\ um
 ```
 
-![4](Screenshots/D45/(57).png)
+![4](Screenshots/D45/57.png)
 
 ```math
 Width\ of\ standard\ cell = 1.38\ um = 0.46 * 3
@@ -76,7 +76,7 @@ Condition 3 verified
 Vertical\ track\ pitch = 0.34\ um
 ```
 
-![5](Screenshots/D45/(56).png)
+![5](Screenshots/D45/56.png)
 
 ```math
 Height\ of\ standard\ cell = 2.72\ um = 0.34 * 8
@@ -100,7 +100,7 @@ magic -T sky130A.tech sky130_vsdinv.mag &
 
 Screenshot of newly saved layout
 
-![6](Screenshots/D45/(55).png)
+![6](Screenshots/D45/55.png)
 
 #### 3. Generate lef from the layout.
 
@@ -113,11 +113,11 @@ lef write
 
 Screenshot of command run
 
-![7](Screenshots/D45/(54).png)
+![7](Screenshots/D45/54.png)
 
 Screenshot of newly created lef file
 
-![8](Screenshots/D45/(53).png)
+![8](Screenshots/D45/53.png)
 
 #### 4. Copy the newly generated lef and associated required lib files to 'picorv32a' design 'src' directory.
 
@@ -139,7 +139,7 @@ ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 
 Screenshot of commands run
 
-![9](Screenshots/D45/(52).png)
+![9](Screenshots/D45/52.png)
 
 #### 5. Edit 'config.tcl' to change lib file and add the new extra lef into the openlane flow.
 
@@ -154,11 +154,11 @@ set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc
 set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
 ```
 
-![10](Screenshots/D45/(51).png)
+![10](Screenshots/D45/51.png)
 
 Edited config.tcl to include the added lef and change library to ones we added in src directory
 
-![10](Screenshots/D45/(50).png)
+![10](Screenshots/D45/50.png)
 
 #### 6. Run openlane flow synthesis with newly inserted custom inverter cell.
 
@@ -192,14 +192,14 @@ run_synthesis
 
 Screenshots of commands run
 
-![11](Screenshots/D45/(49).png)
-![12](Screenshots/D45/(48).png)
+![11](Screenshots/D45/49.png)
+![12](Screenshots/D45/48.png)
 
 #### 7. Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters.
 
 Noting down current design values generated before modifying parameters to improve timing
 
-![15](Screenshots/D45/(47).png)
+![15](Screenshots/D45/47.png)
 
 Commands to view and change parameters to improve timing and run synthesis
 
@@ -235,19 +235,19 @@ run_synthesis
 
 Screenshot of merged.lef in `tmp` directory with our custom inverter as macro
 
-![17](Screenshots/D45/().png)
+![17](Screenshots/D45/.png)
 
 Screenshots of commands run
 
-![18](Screenshots/D45/(47).png)
-![19](Screenshots/D45/(46).png)
-![20](Screenshots/D45/(45).png)
-![20](Screenshots/D45/(44).png)
+![18](Screenshots/D45/47.png)
+![19](Screenshots/D45/46.png)
+![20](Screenshots/D45/45.png)
+![20](Screenshots/D45/44.png)
 
 Comparing to previously noted run values area has increased and worst negative slack has become 0
 
-![21](Screenshots/D45/(47).png)
-![22](Screenshots/D45/(45).png)
+![21](Screenshots/D45/47.png)
+![22](Screenshots/D45/45.png)
 
 #### 8. Once synthesis has accepted our custom inverter we can now run floorplan and placement and verify the cell is accepted in PnR flow.
 
@@ -260,8 +260,8 @@ run_floorplan
 
 Screenshots of command run
 
-![23](Screenshots/D45/(43).png)
-![24](Screenshots/D45/(42).png)
+![23](Screenshots/D45/43.png)
+![24](Screenshots/D45/42.png)
 
 Since we are facing unexpected un-explainable error while using `run_floorplan` command, we can instead use the following set of commands available based on information from `Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl` and also based on `Floorplan Commands` section in `Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md`
 
@@ -274,8 +274,8 @@ tap_decap_or
 
 Screenshots of commands run
 
-![1](Screenshots/D45/(41).png)
-![1](Screenshots/D45/(40).png)
+![1](Screenshots/D45/41.png)
+![1](Screenshots/D45/40.png)
 
 Now that floorplan is done we can do placement using following command
 
@@ -286,8 +286,8 @@ run_placement
 
 Screenshots of command run
 
-![1](Screenshots/D45/(39).png0)
-![1](Screenshots/D45/(38).png)
+![1](Screenshots/D45/39.png)
+![1](Screenshots/D45/38.png)
 
 Commands to load placement def in magic in another terminal
 
@@ -301,11 +301,11 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshot of placement def in magic
 
-![1](Screenshots/D45/(37).png)
+![1](Screenshots/D45/37.png)
 
 Screenshot of custom inverter inserted in placement def with proper abutment
 
-![1](Screenshots/D45/(36).png)
+![1](Screenshots/D45/36.png)
 
 Command for tkcon window to view internal layers of cells
 
@@ -316,8 +316,8 @@ expand
 
 Abutment of power pins with other cell from library clearly visible
 
-![1](Screenshots/D45/(35).png)
-![1](Screenshots/D45/(34).png)
+![1](Screenshots/D45/35.png)
+![1](Screenshots/D45/34.png)
 
 #### 9. Do Post-Synthesis timing analysis with OpenSTA tool.
 
@@ -356,11 +356,11 @@ run_synthesis
 
 Newly created `pre_sta.conf` for STA analysis in `openlane` directory
 
-![1](Screenshots/D45/(33).png)
+![1](Screenshots/D45/33.png)
 
 Newly created `my_base.sdc` for STA analysis in `openlane/designs/picorv32a/src` directory based on the file `openlane/scripts/base.sdc`
 
-![1](Screenshots/D45/(32).png)
+![1](Screenshots/D45/32.png)
 
 Commands to run STA in another terminal
 
@@ -374,8 +374,8 @@ sta pre_sta.conf
 
 Screenshots of commands run
 
-![1](Screenshots/D45/(31).png)
-![1](Screenshots/D45/(30).png)
+![1](Screenshots/D45/31.png)
+![1](Screenshots/D45/30.png)
 
 Since more fanout is causing more delay we can add parameter to reduce fanout and do synthesis again
 
@@ -406,7 +406,7 @@ run_synthesis
 
 OR gate of drive strength 2 is driving 4 fanouts
 
-![1](Screenshots/D45/(29).png)
+![1](Screenshots/D45/29.png)
 
 Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
 
@@ -426,8 +426,8 @@ report_checks -fields {net cap slew input_pins} -digits 4
 
 Result - slack reduced
 
-![1](Screenshots/D45/(28).png)
-![1](Screenshots/D45/(27).png)
+![1](Screenshots/D45/28.png)
+![1](Screenshots/D45/27.png)
 
 ```tcl
 # Generating custom timing report
@@ -436,8 +436,8 @@ report_checks -from _29043_ -to _30440_ -through _14506_
 
 Screenshot of replaced instance
 
-![1](Screenshots/D45/(26).png)
-![1](Screenshots/D45/(25).png)
+![1](Screenshots/D45/26.png)
+![1](Screenshots/D45/25.png)
 
 #### 11. Replace the old netlist with the new netlist generated after timing ECO fix and implement the floorplan, placement and cts.
 
@@ -474,7 +474,7 @@ exit
 
 Screenshot of commands run
 
-![1](Screenshots/D45/(24).png)
+![1](Screenshots/D45/24.png)
 
 Since we confirmed that netlist is replaced and will be loaded in PnR but since we want to follow up on the earlier 0 violation design we are continuing with the clean design to further stages
 
@@ -513,14 +513,14 @@ run_cts
 ```
 
 Screenshots of commands run
-![1](Screenshots/D45/(23).png)
-![2](Screenshots/D45/(22).png)
-![3](Screenshots/D45/(21).png)
-![4](Screenshots/D45/(20).png)
-![5](Screenshots/D45/(19).png)
-![6](Screenshots/D45/(18).png)
-![7](Screenshots/D45/(17).png)
-![8](Screenshots/D45/(16).png)
+![1](Screenshots/D45/23.png)
+![2](Screenshots/D45/22.png)
+![3](Screenshots/D45/21.png)
+![4](Screenshots/D45/20.png)
+![5](Screenshots/D45/19.png)
+![6](Screenshots/D45/18.png)
+![7](Screenshots/D45/17.png)
+![8](Screenshots/D45/16.png)
 
 #### 12. Post-CTS OpenROAD timing analysis.
 
@@ -569,10 +569,10 @@ exit
 
 Screenshots of commands run and timing report generated
 
-![1](Screenshots/D45/(15).png)
-![2](Screenshots/D45/(14).png)
-![3](Screenshots/D45/(13).png)
-![4](Screenshots/D45/(12).png)
+![1](Screenshots/D45/15.png)
+![2](Screenshots/D45/14.png)
+![3](Screenshots/D45/13.png)
+![4](Screenshots/D45/12.png)
 
 #### 13. Explore post-CTS OpenROAD timing analysis by removing 'sky130_fd_sc_hd__clkbuf_1' cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'.
 
@@ -653,9 +653,8 @@ echo $::env(CTS_CLK_BUFFER_LIST)
 ```
 
 Screenshots of commands run and timing report generated
-
-![1](Screenshots/D45/(11).png)
-![2](Screenshots/D45/(10).png)
-![3](Screenshots/D45/(9).png)
-![4](Screenshots/D45/(8).png)
-![5](Screenshots/D45/(7).png)
+![1](Screenshots/D45/11.png)
+![2](Screenshots/D45/10.png)
+![3](Screenshots/D45/9.png)
+![4](Screenshots/D45/8.png)
+![5](Screenshots/D45/7.png)
