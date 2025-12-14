@@ -1,5 +1,5 @@
-# <h1 id="header-1">Day 1</h1>	 
-```Author : Goutham Badhrinath V```
+## Day 1
+## Author : Goutham Badhrinath V
 
 ### <h1 id="header-1_1">Introduction to Chip Design</h1>
 
