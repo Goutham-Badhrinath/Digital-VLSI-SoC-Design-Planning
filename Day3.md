@@ -1,4 +1,5 @@
 ## Day 3 - Design library cell using Magic Layout and ngspice characterization
+## Author : Goutham Badhrinath V
 
 ### Theory
 
