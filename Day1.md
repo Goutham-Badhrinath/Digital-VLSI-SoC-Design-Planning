@@ -1,4 +1,4 @@
-## Day 1
+## Day 1 -  Inception of open-source EDA, OpenLANE and Sky130 PDK
 ## Author : Goutham Badhrinath V
 
 ### <h1 id="header-1_1">Introduction to Chip Design</h1>
