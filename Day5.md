@@ -65,8 +65,8 @@ gen_pdn
 
 Screenshots of power distribution network run
 
-![1](Screenshots/D45/(6).png)
-![1](Screenshots/D45/(5).png)
+![1](Screenshots/D45/6.png)
+![1](Screenshots/D45/5.png)
 
 Commands to load PDN def in magic in another terminal
 
@@ -80,9 +80,9 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshots of PDN def
 
-![2](Screenshots/D45/(4).png)
-![2](Screenshots/D45/(3).png)
-![2](Screenshots/D45/(2).png)
+![2](Screenshots/D45/4.png)
+![2](Screenshots/D45/3.png)
+![2](Screenshots/D45/2.png)
 
 #### 2. Perfrom detailed routing using TritonRoute and explore the routed layout.
 
@@ -101,9 +101,9 @@ run_routing
 
 Screenshots of routing run
 
-![1](Screenshots/D45/(1).png)
-![1](Screenshots/D5/(1).png)
-![1](Screenshots/D5/(2).png)
+![1](Screenshots/D45/1.png)
+![1](Screenshots/D5/1.png)
+![1](Screenshots/D5/2.png)
 
 Commands to load routed def in magic in another terminal
 
@@ -117,14 +117,14 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshots of routed def
 
-![1](Screenshots/D5/(3).png)
-![1](Screenshots/D5/(4).png)
-![1](Screenshots/D5/(5).png)
-![1](Screenshots/D5/(6).png)
+![1](Screenshots/D5/3.png)
+![1](Screenshots/D5/4.png)
+![1](Screenshots/D5/5.png)
+![1](Screenshots/D5/6.png)
 
 Screenshot of fast route guide present in `openlane/designs/picorv32a/runs/13-12_06-01/tmp/routing` directory
 
-![1](Screenshots/D5/(7).png)
+![1](Screenshots/D5/7.png)
 
 #### 3. Post-Route parasitic extraction using SPEF extractor.
 
@@ -139,7 +139,7 @@ python3 main.py \
   --def_file /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-12_06-01/results/routing/picorv32a.def \
   --lef_file /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-12_06-01/tmp/merged.lef
 ```
-![1](Screenshots/D5/(8).png)
+![1](Screenshots/D5/8.png)
 
 #### 4. Post-Route OpenSTA timing analysis with the extracted parasitics of the route.
 
@@ -188,8 +188,8 @@ exit
 
 Screenshots of commands run and timing report generated
 
-![1](Screenshots/D5/(9).png)
-![1](Screenshots/D5/(10).png)
+![1](Screenshots/D5/9.png)
+![1](Screenshots/D5/10.png)
 
 # Acknowledgements
 
